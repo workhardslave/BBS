@@ -1,0 +1,40 @@
+/* 댓글 css */
+.reply_view {
+	width:900px;
+	margin-top:100px; 
+	word-break:break-all;
+}
+.dat_view {
+	font-size: 14px;
+	padding:10px 0 15px 0;
+	border-bottom: solid 1px gray;
+}
+.dat_ins {
+	margin-top:50px;
+}
+.dat_edit_t{
+	width:520px;
+	height:70px;
+	position: absolute;
+	top: 40px;
+}
+.rep_con {
+	width:700px;
+	height: 56px; 
+}
+.rep_btn {
+	position: absolute;
+	width:100px;
+	height:56px;
+	font-size:16px;
+	margin-left: 10px; 
+}
+
+
+
+
+
+
+
+
+
