@@ -1,4 +1,4 @@
-# BBS (System Programming Final Project)
+# BBS (Server Programming Final Project)
 게시판 구현 프로젝트
 
 ### Preview
