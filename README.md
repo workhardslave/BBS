@@ -11,6 +11,7 @@
 - <b>페이징</b>
 - <b>검색 기능</b>
 - <b>댓글 기능</b>
+- <b>관리자 기능 (회원 관리, 게시물 관리, 댓글 관리)</b>  == 진행중
 
 ### Tech Stack
 |Frontend       |Backend      |Database       |                   
