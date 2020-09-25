@@ -2,7 +2,7 @@
 	!empty($_POST['id']) ? $id = $_POST['id'] : $id="";
 	$ret['check'] = false;	
 	if($id != ""){
- 		$con = mysqli_connect("localhost", "user1", "12345", "bbs");
+ 		$con = mysqli_connect("localhost", "root", "", "bbs");
 		$sql = "select 
 					id 
 				from 

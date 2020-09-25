@@ -9,5 +9,9 @@
 		$username = $_SESSION["username"];
 	}else{
 		$username = "";
+	}if (isset($_SESSION["role"])){ // 사용자, 관리자 구분 용도
+		$role = $_SESSION["role"];
+	}else{
+		$role = "";
 	}
 ?>

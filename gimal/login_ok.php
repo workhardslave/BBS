@@ -1,5 +1,4 @@
 <?php
-// 	include_once './db/db_con.php';
     $id   = $_POST['id'];
     $pass = $_POST['pass']; 
     
@@ -37,10 +36,11 @@
         }else {
             session_start();
             $_SESSION["userid"] = $row["id"];
-            $_SESSION["username"] = $row["name"];        
+            $_SESSION["username"] = $row["name"];
+            $_SESSION["role"] = $row["role"]; // 추가 코드        
             echo("
               <script>
-                location.href = 'list.php';
+                location.href = 'index.php';
               </script>
             ");
         }
