@@ -60,7 +60,7 @@
 			    			   from 
 			    					board
 			    			");
-			    	$total_record = mysqli_num_rows($sql); // 게시판 총 레코드 수
+			    	$total_record = mysqli_num_rows($sql); // 게시판 총 레코드 수z
 			  		
 			    	$list = 5; // 한 페이지에 보여줄 개수
 			  		$block_cnt = 5; // 블록당 보여줄 페이지 개수

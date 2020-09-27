@@ -21,7 +21,10 @@ $(function(){
 
 	/* 댓글 삭제 이벤트 */
 	$(".dat_del_btn").click(function(){
+		
+		console.log("먹나요?");
 		$("#rep_modal_del").modal();
+		
 	});
 	
 		

@@ -75,7 +75,7 @@
 				<a href="list.php" class="btn btn-primary">목록</a>
 				<!-- 자신의 글만 수정, 삭제 할 수 있도록 설정-->
 				<?php 
-					if($userid==$board['name']){
+					if($userid==$board['name'] || $role=="ADMIN"){ // 본인 아이디거나, 관리자 계정이거나
 				?>
 						<a href="update.php?idx=<?=$board['idx']?>" class="btn btn-primary">수정</a>
 						<a href="delete.php?idx=<?=$board['idx']?>" class="btn btn-primary">삭제</a>
@@ -106,7 +106,7 @@
 						<a class="dat_del_btn" href="#">삭제</a>
 					</div>
 				</div>
-				<!-- 댓글 삭제 모달창 구현 -->
+				<!-- 댓글 삭제 모달창 구현(회원) -->
 				<div class="modal fade" id="rep_modal_del">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -119,10 +119,21 @@
 							</div>
 							<!-- body -->
 							<div class="modal-body">
-								<form method="post" id="modal_form" action="reply_delete.php">
+							<!-- 회원일 때 댓글 삭제 -->
+							<?php if($role=="USER") {?>
+								<form method="post" id="modal_form1" action="reply_delete.php">
 									<input type="hidden" name="rno" value="<?=$reply['idx'];?>" /><input type="hidden" name="b_no" value="<?=$bno;?>">		
 									<p>비밀번호  <input type="password" name="pw" /> <input type="submit" class="btn btn-primary" value="확인" /></p>
 								</form>
+								
+							<!-- 관리자일 때 댓글 삭제 -->
+							<?php } else if($role=="ADMIN") {?>
+								<form method="post" id="modal_form2" action="reply_delete.php">
+									<input type="hidden" name="rno" value="<?=$reply['idx'];?>" /><input type="hidden" name="b_no" value="<?=$bno;?>">
+									<input type="hidden" name="pw" value="">		
+									<p>삭제하시겠습니까? <input type="submit" class="btn btn-primary" value="확인" /></p>
+								</form>
+							<?php }?>
 							</div>
 					  	</div>
 				  	</div>

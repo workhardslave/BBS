@@ -21,13 +21,13 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
 						aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="login.php">로그인</a></li>
+							<li><a href="login.php">로그인</a></li> <!-- 바닐라 자바스크립트로 나중에 active 속성 추가 -->
 							<li><a href="join.php">회원가입</a></li>
 						</ul>
 					</li>
 				</ul>
 			<?php 
-				}else if($userid && $role=="USER"){	
+				}else if($userid){	
 					$logged = $username."(".$userid.")";
 			?>
 				<ul class="nav navbar-nav navbar-right">
@@ -39,19 +39,5 @@
 						</ul>
 					</li>
 				</ul>
-			<?php
-				}else if($userid && $role=="ADMIN") { 
-					$logged = $username."(".$userid.")";
-			?>		<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-							aria-haspopup="true" aria-expanded="false"><b><?=$logged ?></b>님의 회원관리<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="userList.php">모든 회원관리</a></li>
-								<li><a href="logout.php">로그아웃</a></li>
-							</ul>
-						</li>
-					</ul>
 			<?php }?>
-			
 			</div>

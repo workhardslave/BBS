@@ -20,5 +20,5 @@
 	<script>
 		alert("수정되었습니다.");
 	</script>
-	<meta http-equiv="refresh" content="0 url=/gimal/read.php?idx=<?=$bno?>">
+	<meta http-equiv="refresh" content="0 url=/bbs/gimal/read.php?idx=<?=$bno?>">
 

@@ -43,6 +43,6 @@
 				</form>
 			</div>
 		</div> 
-		<script src="./js/login.js"></scripa	      
+		<script src="./js/login.js"></script>	      
 	</body>
 </html>
