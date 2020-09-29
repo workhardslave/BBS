@@ -32,7 +32,7 @@
 					</div>
 					<!-- body -->
 					<div class="modal-body">
-						<form method="post" id="modal_form" action="./ck_read.php?idx=" data-action="./ck_read.php?idx=">
+						<form method="post" id="modal_form" data-action="./ck_read.php?idx=">
 							<p>비밀번호  <input type="password" name="pw_chk" /> <input type="submit" class="btn btn-primary" value="확인" /></p>
 						</form>
 					</div>
@@ -113,7 +113,8 @@
 			          	$lockimg="<img src='./img/lock.png' alt='lock' title='lock' width='18' height='18'>";
 			          	if($board['lock_post']=="1"){ // lock_post 값이 1이면 잠금
 			          ?>
-			          		<span class="lock_check" style="cursor:pointer" data-idx="<?=$board['idx']?>" ><?=$title?> <?=$lockimg?></span>
+			          		<span class="lock_check" style="cursor:pointer" data-action="./read.php?idx="
+			          		data-check=<?=$role ?> data-idx="<?=$board['idx']?>" ><?=$title?> <?=$lockimg?></span>
 			          <!-- 일반 글 가져오기 -->
 			          <?php 
 			          	}else{	// 아니면 공개 글
@@ -190,9 +191,14 @@
 		<!-- 비밀글 클릭시 모달창을 띄우는 이벤트 -->
 		$(function(){
 		    $(".lock_check").click(function(){
+			    <!-- 관리자 계정일 경우 바로 해당 글로 이동 -->
+			    if($(this).attr("data-check")=="ADMIN") {
+			    	var action_url = $(this).attr("data-action")+$(this).attr("data-idx");
+					$(location).attr("href",action_url);
+			    }
 				$("#modal_div").modal();
 				<!-- 주소에 data-idx(idx)값을 더하기 -->
-				var action_url = $("#modal_form").attr("data-action")+$(this).attr("data-idx")
+				var action_url = $("#modal_form").attr("data-action")+$(this).attr("data-idx");
 				$("#modal_form").attr("action",action_url);
 			});
 		});
